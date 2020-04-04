@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Draw</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      canvas {
+        flex: 1;
+      }
+      .statusbar {
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 15px;
+        font-family: monospace;
+        color: #777;
+      }
+      .statusbar .item {
+        display: block;
+      }
+      .statusbar .item:not(:last-child) {
+        padding-right: 15px;
+        margin-right: 15px;
+        border-right: 1px solid #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <div class="statusbar">
+      <span class="item">width: <b>-</b> <span valueof="sw">1</span> <b>+</b></span>
+      <span class="item"><b>c</b>olor: <span valueof="c">#000000</span></span>
+    </div>
+    <script>
+      function on(el, ev, cb) {
+        ev.split(" ").forEach(function(s) {
+          el.addEventListener(s, cb);
+        });
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
